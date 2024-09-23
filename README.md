@@ -13,9 +13,38 @@ conda env create -f environment.yml
 ```
 Please refer to [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?tdsourcetag=s_pctim_aiomsg#viewing-a-list-of-the-packages-in-an-environment) for creating an environment from an ``*.yml`` file using ``conda``.
 
-## Data Prepare
-We provide the data example in ``./data_exmaple``. Notably, you need to process the raw data in ``./raw_data`` into the data format in ``./data_exmaple``. Each line includes a training instance, and each training instance includes three part: 
+## Data Preparing
+We provide some data examples in ``./data_exmaple``. Notably, you need to manually process the raw data in ``./raw_data`` into the data format in ``./data_exmaple``. ``<d>`` is used for marking the document boundary in ``./raw_data``, such as:
+```
+doc_1_sent_1
+doc_1_sent_2
+<d>
+doc_2_sent_1
+doc_2_sent_2
+```
+in the par Each line includes a training instance, and each training instance includes three parts: 
 
 ```
-
+[inter-sentence context] <extra_id_0> [source sentence] <extra_id_0> [target sentence]
 ```
+``<extra_id_0>`` is the special token for the boundary of each part. ``[inter-sentence context]`` is consisted of the previous sentences of ``[source sentence]``. We set the length of ``inter-sentence context``to no more than 256.
+
+## Training and Inference
+We provide the training and inference pipeline in ``./exp_sh``. so you can reproduce our experimental results by running the corresponding pipeline, such as running:
+```
+bash ./exp_sh/exp-dempt-training.sh en zh  llama-2-7b-hf llama
+```
+to reproduce the DeMPT results in ZH-EN upon ``llama-2-7b``.
+
+Before training and inference, please ensure the datasets have been processed into the directory ``./data_example`` or your customized path (need to change the ``data_dir`` in the corresponding shell script). Meanwhile, downloading the corresponding pretrained models, such as ``llama-2-7b-hf``
+into ``./llm-ckpt``. The default saving directory is ``./workspace/$MODEL_TYPE``.
+
+
+
+
+
+
+
+
+
+
