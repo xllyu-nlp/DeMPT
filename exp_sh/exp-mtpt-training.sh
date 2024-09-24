@@ -1,7 +1,4 @@
 #!/bin/bash
-# llama for msp training script
-# Xinglin Lyu, 2023-6-14
-
 # sh var
 src=$1
 tgt=$2
