@@ -9,7 +9,7 @@ This is the implementation for paper DeMPT: Decoding-enhanced Multi-phase Prompt
 ## Install Running Environment
 We provide all of the dependencies in ``envs.yaml`` file. You can easily re-produce the running environment using ``conda`` via the following commands:
 ```
-conda env create -f environment.yml
+conda env create -f envs.yml
 ```
 Please refer to [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?tdsourcetag=s_pctim_aiomsg#viewing-a-list-of-the-packages-in-an-environment) for creating an environment from an ``*.yml`` file using ``conda``.
 
