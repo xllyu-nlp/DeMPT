@@ -37,7 +37,7 @@ bash ./exp_sh/exp-dempt-training.sh en zh  llama-2-7b-hf llama
 to reproduce the DeMPT results in ZH-EN upon ``llama-2-7b``.
 
 Before training and inference, please ensure the datasets have been processed into the directory ``./data_example`` or your customized path (need to change the ``data_dir`` in the corresponding shell script). Meanwhile, downloading the corresponding pretrained models, such as ``llama-2-7b-hf``
-into ``./llms-ckpt``. The default saving directory is ``./workspace/$MODEL_TYPE``.
+into ``./llms_ckpt``. The default saving directory is ``./workspace/$MODEL_TYPE``.
 
 ## Citation
 ```
